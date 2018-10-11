@@ -4,6 +4,10 @@
     <h1>My Cart</h1>
   </header>
 
+<% if @isEmpty %>
+<h1> The cart is empty now.</h1>
+  <%= link_to 'Continue Shopping', root_path %> 
+<% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -49,4 +53,5 @@
     </div>
   </div>
 
+<% end %>
 </section>
