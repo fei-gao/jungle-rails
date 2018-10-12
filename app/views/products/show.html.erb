@@ -23,9 +23,26 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
         </dl>
+      <div>
 
       <div>
-      <h1> Product Reviews </h1>
+      <h2> Create Review </h2>
+      <%= form_for :review do |f| %>
+        <p>
+          <%= f.label :description %><br>
+          <%= f.text_field :description %>
+        </p>
+      
+        <p>
+          <%= f.label :rating %><br>
+          <%= f.select :rating, ['5', '4', '3', '2', '1']%>
+        </p>
+      
+        <p>
+          <%= f.submit %>
+        </p>
+        <% end %>
+      <h2> Product Reviews </h2>
       <ul>
         <% @product.reviews.each do|review| %>
         <%= render 'review', review: review%>
