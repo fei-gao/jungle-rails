@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
+    before_filter :authorize
+
     def show
       @review = Review.find(params[:id])
-      @session = session
     end
     
     # def new
