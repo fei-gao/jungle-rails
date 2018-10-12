@@ -30,7 +30,7 @@
       <%= form_for([@product, @product.reviews.build]) do |f| %>
         <p>
           <%= f.label :description %><br>
-          <%= f.text_field :description %>
+          <%= f.text_field :description, {} %>
         </p>
       
         <p>
@@ -42,12 +42,20 @@
           <%= f.submit %>
         </p>
         <% end %>
-      <h2> Product Reviews </h2>
-      <ul>
-        <% @product.reviews.each do|review| %>
-        <%= render 'review', review: review%>
-        <% end %>
-      </ul>
+
+      <% if @product.reviews == [] %>
+      <h2> This product has no review yet. </h2>
+      <%
+      # <% else %>
+      # <h2> Product Reviews </h2>
+      # <ul>
+        # <% @product.reviews.reverse_each do|review| %>
+        # <%= render 'review', review: review%>
+        # <% end %>
+      # </ul>
+      %>
+      <% end %>
+
       </div>
 
       </div>
