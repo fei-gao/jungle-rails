@@ -27,7 +27,7 @@
 
       <div>
       <h2> Create Review </h2>
-      <%= form_for :review do |f| %>
+      <%= form_for([@product, @product.reviews.build]) do |f| %>
         <p>
           <%= f.label :description %><br>
           <%= f.text_field :description %>
