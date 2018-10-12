@@ -26,34 +26,29 @@
       <div>
 
       <div>
+      <% if current_user %>
       <h2> Create Review </h2>
       <%= form_for([@product, @product.reviews.build]) do |f| %>
         <p>
           <%= f.label :description %><br>
-          <%= f.text_field :description, {} %>
+          <%= f.text_field :description, :class => 'form-control' %>
         </p>
       
         <p>
           <%= f.label :rating %><br>
-          <%= f.select :rating, ['5', '4', '3', '2', '1']%>
+          <%= f.select :rating, ['5', '4', '3', '2', '1'], {:class => 'form-control'}%>
         </p>
       
         <p>
-          <%= f.submit %>
+          <%= f.submit({:class => 'btn btn-primary'}) %>
         </p>
         <% end %>
+        <% end %>
 
-      <% if @product.reviews == [] %>
+      <% if @product.reviews.all() == [] %>
       <h2> This product has no review yet. </h2>
-      <%
-      # <% else %>
-      # <h2> Product Reviews </h2>
-      # <ul>
-        # <% @product.reviews.reverse_each do|review| %>
-        # <%= render 'review', review: review%>
-        # <% end %>
-      # </ul>
-      %>
+      <% else %> 
+       <%= render 'products/review' %>
       <% end %>
 
       </div>

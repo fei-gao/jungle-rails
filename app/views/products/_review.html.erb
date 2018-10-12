@@ -1,4 +1,7 @@
-<li> 
+
+<h3> Product Reviews</h3>
+<% @product.reviews.reverse_each do |review| %>
+<div class="well">
     <div> 
     User: <%= review.user_id %>
     </div> 
@@ -10,4 +13,5 @@
     <div>
     Rating: <%= review.rating %>/5
     </div>
-</li>
+</div>
+<% end %>
