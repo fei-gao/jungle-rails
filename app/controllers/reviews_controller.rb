@@ -1,25 +1,26 @@
 class ReviewsController < ApplicationController
     before_filter :authorize
 
-    def show
-      @review = Review.find(params[:id])
-    end
-    
-    # def new
-    #     @review = Review.new
-    # end
-
     def create
         @product = Product.find(params[:product_id])
         @review = @product.reviews.new(review_params)
         @review.user_id = current_user.id
         if @review.save
-            redirect_to review_path(@review)
+            redirect_to :back
         else 
             redirect_to product_path(@product)
-            # render 'new'
         end
     end
+    
+    def destroy
+        @review = Review.find params[:id]
+        
+        if @review.destroy
+          redirect_to :back, notice: 'Review deleted!'
+        else 
+          redirect_to :back
+        end
+      end
 
     private
     def review_params
