@@ -2,6 +2,18 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Contributions to Project
+### Feature
+* Product Sold Out Badge
+* Admin Category Routes and Creation
+* User Authentication and Login
+* Order Details Upon Checkout
+* Email Receipt
+* Admin Authentication
+* Product Ratings and Reviews
+### Bug Fix
+* Checking out With Empty Cart
+
 
 ## Setup
 
