@@ -47,17 +47,31 @@ RSpec.describe User, type: :model do
       expect(user1).to_not be_valid
       end
     end
-
-    describe 'Validations' do
-      # validation examples here
-    end
   
     describe '.authenticate_with_credentials' do
       # examples for this class method here
+      it 'is not nil with correct email and password' do
+        user1 = User.create(name: 'Kelly', email: 'kelly@gmail.com', password: 'kelly123', password_confirmation: 'kelly123')
+        user1_login = User.authenticate_with_credentials(user1.email, user1.password)
+        expect(user1_login).to_not be_nil
+      end
+
       it 'return nil if without correct password' do
         user1 = User.create(name: 'Kelly', email: 'kelly@gmail.com', password: 'kelly123', password_confirmation: 'kelly123')
         user1_login = User.authenticate_with_credentials(user1.email, 123456)
         expect(user1_login).to be_nil
       end
+
+      it 'returns user if there is extra spaces in email' do
+        user1 = User.create(name: 'Kelly', email: 'kelly@gmail.com', password: 'kelly123', password_confirmation: 'kelly123')
+        user1_login = User.authenticate_with_credentials(' kelly@gmail.com ', user1.password)
+        expect(user1_login).to_not be_nil
+      end
+
+      it 'works even if email is in different case' do 
+        user1 = User.create(name: 'Kelly', email: 'kelly@gmail.com', password: 'kelly123', password_confirmation: 'kelly123')
+        user1_login = User.authenticate_with_credentials('KELLY@Gmail.com ', user1.password)
+        expect(user1_login).to_not be_nil
+      end
     end
-end
+  end
