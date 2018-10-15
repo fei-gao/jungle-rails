@@ -47,4 +47,17 @@ RSpec.describe User, type: :model do
       expect(user1).to_not be_valid
       end
     end
+
+    describe 'Validations' do
+      # validation examples here
+    end
+  
+    describe '.authenticate_with_credentials' do
+      # examples for this class method here
+      it 'return nil if without correct password' do
+        user1 = User.create(name: 'Kelly', email: 'kelly@gmail.com', password: 'kelly123', password_confirmation: 'kelly123')
+        user1_login = User.authenticate_with_credentials(user1.email, 123456)
+        expect(user1_login).to be_nil
+      end
+    end
 end
