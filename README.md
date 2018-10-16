@@ -22,7 +22,9 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 ### Screenshot
 ![Screenshot of homepage](https://github.com/fei-gao/jungle-rails/blob/master/docs/home_page.png)
+![Screenshot of bookshelf](https://github.com/fei-gao/jungle-rails/blob/master/docs/bookshelf.png)
 ![Screenshot of product details](https://github.com/fei-gao/jungle-rails/blob/master/docs/product_details.png)
+![Screenshot of admin_all_products page](https://github.com/fei-gao/jungle-rails/blob/master/docs/admin_all_products.png)
 
 ## Setup
 
