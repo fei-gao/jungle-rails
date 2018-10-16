@@ -13,7 +13,16 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 * Product Ratings and Reviews
 ### Bug Fix
 * Checking out With Empty Cart
+### Testing
+* Model Spec: Product
+* Model Spec: User 
+* Feature Spec: Home Page
+* Feature Spec: Product Details
+* Feature Spec: Add to Cart
 
+### Screenshot
+![Screenshot of homepage](https://github.com/fei-gao/jungle-rails/blob/master/docs/home_page.png)
+![Screenshot of product details](https://github.com/fei-gao/jungle-rails/blob/master/docs/product_details.png)
 
 ## Setup
 
